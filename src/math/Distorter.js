@@ -8,7 +8,8 @@ import { ortho2polar, polar2ortho, type Point3D } from './utils';
 const absMinus = (x: number, delta: number) => {
   if (x > delta) {
     return x - delta;
-  } else if (x < -delta) {
+  }
+  if (x < -delta) {
     return x + delta;
   }
   return 0;

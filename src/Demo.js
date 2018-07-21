@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { View, Image, StyleSheet, Platform, Dimensions } from 'react-native';
+import { Image, StyleSheet, Dimensions } from 'react-native';
 
 import { getImage } from './assets';
 import WineGlass from './components/WineGlass';

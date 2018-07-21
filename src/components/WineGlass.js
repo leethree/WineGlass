@@ -33,17 +33,30 @@ type Props<T> = DefaultProps & {
 
 class WineGlass<T> extends React.Component<Props<T>, void> {
   props: Props<T>;
+
   bubbles: Array<BubbleInfo<T>> = [];
+
   width: number = 0;
+
   height: number = 0;
+
   distort: Point3D => Point3D = _ => _;
+
   pan: Point2D = { x: 0, y: 0 };
+
   focusedBubble: ?BubbleInfo<T> = null;
+
   zoomProgressAnim: Animated.Value = new Animated.Value(0);
-  zoomProgress: number = 0; // from 0 to 1
+
+  zoomProgress: number = 0;
+
+  // from 0 to 1
   grid: Object;
+
   panElement: ?PanView;
+
   animationFrame: ?AnimationFrameID;
+
   animatedValues: Array<Animated.Value> = [];
 
   static defaultProps = {
@@ -160,7 +173,7 @@ class WineGlass<T> extends React.Component<Props<T>, void> {
   startEnterAnimations() {
     Animated.stagger(
       100,
-      this.bubbles.map((bubbleInfo: BubbleInfo<T>, index: number) => {
+      this.bubbles.map((bubbleInfo: BubbleInfo<T>) => {
         const position = bubbleInfo.position;
         const progress = new Animated.Value(0);
         progress.addListener(({ value }) => {

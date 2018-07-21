@@ -4,32 +4,34 @@ import * as React from 'react';
 import { Animated, PanResponder, View, Platform } from 'react-native';
 
 import { distance2D } from '../math/utils';
-// import type { ViewStyleProp, LayoutEvent } from 'lib/types';
 
 type Props = {
   style: *,
-  onLayout: ?(event: *) => void,
-  onPan: ?(number, number, boolean) => void,
-  onPress: ?() => any,
-  findSnapPoint: ?(number, number) => { x: number, y: number },
+  onLayout?: ?(event: *) => void,
+  onPan?: ?(number, number, boolean) => void,
+  onPress?: ?() => any,
+  findSnapPoint?: ?(number, number) => { x: number, y: number },
   children: ?React.Node,
 };
 
 class PanView extends React.Component<Props, void> {
   props: Props;
+
   panResponder: PanResponder;
+
   currentX: number = 0;
+
   currentY: number = 0;
+
   pan: Animated.ValueXY = new Animated.ValueXY();
+
   dragging: boolean = false;
 
   static defaultProps = {
-    style: [],
     onLayout: null,
     onPan: null,
     onPress: null,
     findSnapPoint: null,
-    children: null,
   };
 
   componentWillMount() {
@@ -51,15 +53,14 @@ class PanView extends React.Component<Props, void> {
     });
 
     this.panResponder = PanResponder.create({
-      onStartShouldSetPanResponder: (e: Object, gestureState: Object) => {
+      onStartShouldSetPanResponder: () => {
         if (this.props.onPress) {
           this.props.onPress();
         }
         return false;
       },
-      onMoveShouldSetPanResponder: (e: Object, gestureState: Object) => {
-        return Math.abs(gestureState.dx) > 10 || Math.abs(gestureState.dy) > 10;
-      },
+      onMoveShouldSetPanResponder: (e: Object, gestureState: Object) =>
+        Math.abs(gestureState.dx) > 10 || Math.abs(gestureState.dy) > 10,
       onPanResponderGrant: () => {
         this.pan.stopAnimation();
         this.pan.extractOffset();

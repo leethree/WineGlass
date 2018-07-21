@@ -44,14 +44,21 @@ const createStyleFromPosition = (
 
 class Bubble extends React.Component<Props, State> {
   props: Props;
+
   state: State = {
     visible: true,
   };
+
   element: *;
+
   opacity: number = 1;
+
   highlightOpacity: number = 1;
+
   highlighted: boolean = false;
+
   position: Point3D;
+
   highlightOpacityAnim: Animated.Value = new Animated.Value(1);
 
   constructor(props: Props) {
@@ -159,14 +166,10 @@ class Bubble extends React.Component<Props, State> {
     return false;
   };
 
-  handleStartShouldSetResponder = ({ nativeEvent }: *) => {
-    return this.isTouchWithinHitCircle(
-      nativeEvent.locationX,
-      nativeEvent.locationY,
-    );
-  };
+  handleStartShouldSetResponder = ({ nativeEvent }: *) =>
+    this.isTouchWithinHitCircle(nativeEvent.locationX, nativeEvent.locationY);
 
-  handleResponderGrant = ({ nativeEvent }: *) => {
+  handleResponderGrant = () => {
     this.startHighlight();
   };
 
@@ -180,13 +183,13 @@ class Bubble extends React.Component<Props, State> {
     }
   };
 
-  handleResponderRelease = ({ nativeEvent }: *) => {
+  handleResponderRelease = () => {
     if (this.endHighlight()) {
       this.onPress();
     }
   };
 
-  handleResponderTerminate = ({ nativeEvent }: *) => {
+  handleResponderTerminate = () => {
     this.endHighlight();
   };
 
