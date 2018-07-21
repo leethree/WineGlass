@@ -1,5 +1,11 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+    "name": "WineGlass",
+    "slug": "wineglass",
+    "description": "Demo for Apple-Watch-Home-Screen-style UI in React Native",
+    "sdkVersion": "27.0.0",
+    "privacy": "public",
+    "icon": "./src/assets/icon.png",
+    "githubUrl": "https://github.com/leethree/WineGlass/"
   }
 }
