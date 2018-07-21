@@ -2,7 +2,7 @@
 
 /* eslint-disable global-require, import/no-commonjs, import/no-unresolved */
 
-const imageAssets = [
+export const imageAssets = [
   require('./product1.png'),
   require('./product2.png'),
   require('./product3.png'),
