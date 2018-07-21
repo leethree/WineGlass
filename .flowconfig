@@ -1,0 +1,12 @@
+[ignore]
+
+[untyped]
+.*/node_modules/react-native/.*
+
+[include]
+
+[libs]
+
+[options]
+
+[version]

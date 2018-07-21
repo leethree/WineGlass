@@ -2,11 +2,6 @@
   "name": "WineGlass",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "react-native-scripts": "1.14.0",
-    "jest-expo": "~27.0.0",
-    "react-test-renderer": "16.3.1"
-  },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "start": "react-native-scripts start",
@@ -19,8 +14,20 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "easing-js": "^1.1.2",
     "expo": "^27.0.1",
     "react": "16.3.1",
     "react-native": "~0.55.2"
+  },
+  "devDependencies": {
+    "flow-bin": "0.75.0",
+    "jest-expo": "~27.0.0",
+    "prettier": "^1.13.7",
+    "react-native-scripts": "1.14.0",
+    "react-test-renderer": "16.3.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }
