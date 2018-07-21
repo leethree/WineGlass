@@ -3,6 +3,7 @@
 
 [untyped]
 .*/node_modules/react-native/.*
+.*/node_modules/expo/.*
 
 [include]
 
