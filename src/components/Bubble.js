@@ -47,7 +47,7 @@ class Bubble extends React.Component<Props, State> {
   state: State = {
     visible: true,
   };
-  element: ?NativeView;
+  element: *;
   opacity: number = 1;
   highlightOpacity: number = 1;
   highlighted: boolean = false;

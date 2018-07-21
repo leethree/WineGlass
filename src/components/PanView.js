@@ -7,8 +7,8 @@ import { distance2D } from '../math/utils';
 // import type { ViewStyleProp, LayoutEvent } from 'lib/types';
 
 type Props = {
-  style: ?ViewStyleProp,
-  onLayout: ?(LayoutEvent) => void,
+  style: *,
+  onLayout: ?(event: *) => void,
   onPan: ?(number, number, boolean) => void,
   onPress: ?() => any,
   findSnapPoint: ?(number, number) => { x: number, y: number },
@@ -121,8 +121,7 @@ class PanView extends React.Component<Props, void> {
     }
   }
 
-  onLayout = (event: LayoutEvent) =>
-    this.props.onLayout && this.props.onLayout(event);
+  onLayout = (event: *) => this.props.onLayout && this.props.onLayout(event);
 
   render() {
     return (
