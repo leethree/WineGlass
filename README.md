@@ -2,7 +2,11 @@
 
 # WineGlass
 
-> Demo for Apple-Watch-Home-Screen-style UI in React Native
+> A demo of Apple-Watch-Home-Screen-style UI written in React Native
+
+## Try It Out
+
+You can try out the demo using [expo](https://expo.io/@leethree/wineglass) on iOS or Android.
 
 <img src=".github/demo.gif" alt="Screenshot" width="320">
 
@@ -29,5 +33,7 @@ yarn start
 ## License
 
 [MIT © Sirui Li](LICENSE)
+
+This UI was originally developed for the [Shoppo app](https://get.shoppo.com/).
 
 Icon is based on “sparkling wine” by teleymon from the Noun Project.
