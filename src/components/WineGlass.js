@@ -48,9 +48,9 @@ class WineGlass<T> extends React.Component<Props<T>, void> {
 
   zoomProgressAnim: Animated.Value = new Animated.Value(0);
 
+  // from 0 to 1
   zoomProgress: number = 0;
 
-  // from 0 to 1
   grid: Object;
 
   panElement: ?PanView;

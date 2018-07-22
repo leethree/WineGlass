@@ -9,7 +9,7 @@ import WineGlass from './components/WineGlass';
 const BUBBLE_SIZE = Dimensions.get('window').width * 0.28;
 const NUM_OF_BUBBLES = 19;
 // generate images
-const images = [...Array(NUM_OF_BUBBLES).keys()].map(getImage);
+const images = Array.from(new Array(NUM_OF_BUBBLES)).map(getImage);
 
 const Demo = () => {
   const renderItem = ({ item, index }: *) => (
