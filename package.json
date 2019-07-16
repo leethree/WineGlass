@@ -17,8 +17,8 @@
   "dependencies": {
     "easing-js": "^1.1.2",
     "expo": "^27.0.1",
-    "react": "16.3.1",
-    "react-native": "~0.55.2"
+    "react": "16.8.6",
+    "react-native": "~0.60.3"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
