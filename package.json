@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "easing-js": "^1.1.2",
-    "expo": "^27.0.1",
+    "expo": "^34.0.3",
     "react": "16.3.1",
     "react-native": "~0.55.2"
   },
