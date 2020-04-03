@@ -22,7 +22,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.0.tar.gz"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.6",
+    "babel-eslint": "^10.1.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "17.0.0",
     "eslint-config-prettier": "^2.9.0",
