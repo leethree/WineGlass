@@ -17,8 +17,6 @@ type Props = {
 class PanView extends React.Component<Props, void> {
   props: Props;
 
-  panResponder: PanResponder;
-
   currentX: number = 0;
 
   currentY: number = 0;
@@ -27,6 +25,34 @@ class PanView extends React.Component<Props, void> {
 
   dragging: boolean = false;
 
+  panResponder: PanResponder = PanResponder.create({
+    onStartShouldSetPanResponder: () => {
+      if (this.props.onPress) {
+        this.props.onPress();
+      }
+      return false;
+    },
+    onMoveShouldSetPanResponder: (e: Object, gestureState: Object) =>
+      Math.abs(gestureState.dx) > 10 || Math.abs(gestureState.dy) > 10,
+    onPanResponderGrant: () => {
+      this.pan.stopAnimation();
+      this.pan.extractOffset();
+      this.dragging = true;
+    },
+    onPanResponderMove: Animated.event([
+      null,
+      {
+        dx: this.pan.x,
+        dy: this.pan.y,
+      },
+    ]),
+    onPanResponderRelease: (e: Object, gestureState: Object) => {
+      this.pan.flattenOffset();
+      this.handlePanResponderRelease(gestureState);
+      this.dragging = false;
+    },
+  });
+
   static defaultProps = {
     onLayout: null,
     onPan: null,
@@ -34,7 +60,7 @@ class PanView extends React.Component<Props, void> {
     findSnapPoint: null,
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.pan.addListener(value => {
       // workaround for X Y not updating simutaniously on Android
       if (
@@ -50,34 +76,6 @@ class PanView extends React.Component<Props, void> {
       if (this.props.onPan) {
         this.props.onPan(value.x, value.y, this.dragging);
       }
-    });
-
-    this.panResponder = PanResponder.create({
-      onStartShouldSetPanResponder: () => {
-        if (this.props.onPress) {
-          this.props.onPress();
-        }
-        return false;
-      },
-      onMoveShouldSetPanResponder: (e: Object, gestureState: Object) =>
-        Math.abs(gestureState.dx) > 10 || Math.abs(gestureState.dy) > 10,
-      onPanResponderGrant: () => {
-        this.pan.stopAnimation();
-        this.pan.extractOffset();
-        this.dragging = true;
-      },
-      onPanResponderMove: Animated.event([
-        null,
-        {
-          dx: this.pan.x,
-          dy: this.pan.y,
-        },
-      ]),
-      onPanResponderRelease: (e: Object, gestureState: Object) => {
-        this.pan.flattenOffset();
-        this.handlePanResponderRelease(gestureState);
-        this.dragging = false;
-      },
     });
   }
 

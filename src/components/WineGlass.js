@@ -74,7 +74,7 @@ class WineGlass<T> extends React.Component<Props<T>, void> {
     this.grid = HexGrid(props.bubbleDistance / Math.sqrt(3));
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.zoomProgressAnim.addListener(({ value }) => {
       this.zoomProgress = value;
       this.requestUpdateNative();

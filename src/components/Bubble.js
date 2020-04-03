@@ -66,7 +66,7 @@ class Bubble extends React.Component<Props, State> {
     this.position = props.initialPosition;
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.highlightOpacityAnim.addListener(({ value }) => {
       this.highlightOpacity = value;
       this.updateNative();
