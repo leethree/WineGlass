@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { AppLoading, Asset } from 'expo';
+import { AppLoading } from 'expo';
+import { Asset } from 'expo-asset';
 
 import { imageAssets } from './src/assets';
 import Demo from './src/Demo';
