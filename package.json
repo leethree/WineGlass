@@ -30,7 +30,7 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.2",
-    "eslint-plugin-react": "^7.9.1",
+    "eslint-plugin-react": "^7.21.3",
     "flow-bin": "0.75.0",
     "jest-expo": "^37.0.0",
     "prettier": "^1.13.7",
