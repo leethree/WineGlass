@@ -3524,10 +3524,10 @@ flat-cache@^1.2.1:
     rimraf "~2.6.2"
     write "^0.2.1"
 
-flow-bin@0.75.0:
-  version "0.75.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.75.0.tgz#b96d1ee99d3b446a3226be66b4013224ce9df260"
-  integrity sha1-uW0e6Z07RGoyJr5mtAEyJM6d8mA=
+flow-bin@0.139.0:
+  version "0.139.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.139.0.tgz#3ad6c75460be45b64f00521035c5affb3c440df5"
+  integrity sha512-eilVetLwztYtKjRj//4OsJ7aw47hsUZ8GTINxaZHWhpqiFikErQL0sV/3hQtpm54w9FuS2PO4yvbU0pWrtckqg==
 
 fontfaceobserver@^2.1.0:
   version "2.1.0"
